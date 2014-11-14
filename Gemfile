@@ -1,6 +1,32 @@
 source 'https://rubygems.org'
 
+gem 'haml'
+gem 'haml-rails', :group => :development
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
+gem 'devise'
+gem 'simple_form'
+
+group :development,:test do
+  gem "rspec-rails", "~> 3.1.0"
+  gem "factory_girl_rails", "~> 4.4.1"
+end
+
+group :test do
+  gem "faker", "~> 1.4.3"
+  gem "capybara", "~> 2.4.3"
+  gem "database_cleaner", "~> 1.3.0"
+  gem "launchy", "~> 2.4.2"
+  gem "selenium-webdriver", "~> 2.43.0"
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+ruby '2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use postgresql as the database for Active Record
