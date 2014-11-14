@@ -24,6 +24,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rails_layout'
 end
 
 ruby '2.1.0'
