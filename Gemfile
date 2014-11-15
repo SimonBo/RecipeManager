@@ -14,6 +14,7 @@ group :development,:test do
 end
 
 group :test do
+  gem 'cucumber-rails', :require => false
   gem "faker", "~> 1.4.3"
   gem "capybara", "~> 2.4.3"
   gem "database_cleaner", "~> 1.3.0"
@@ -25,6 +26,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails_layout'
+  gem 'guard-rspec', require: false
+  gem 'guard-cucumber'
 end
 
 ruby '2.1.0'
