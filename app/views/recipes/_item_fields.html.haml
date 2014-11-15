@@ -1,0 +1,11 @@
+.nested-fields
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :amount
+    = f.number_field :amount, :step => 0.1
+  .field
+    = f.label :measure
+    = f.select :measure, options_for_select(%w[piece gr kg ml l ])
+  = link_to_remove_association "remove item", f

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem "cocoon"
 gem 'haml'
 gem 'haml-rails', :group => :development
 gem 'bootstrap-sass'

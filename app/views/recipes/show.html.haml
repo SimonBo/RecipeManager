@@ -8,7 +8,12 @@
   = @recipe.description
 %p
   %b User:
-  = @recipe.user
+  = @recipe.user.email
+- @recipe.items.each do |item|
+  %p
+    = item.ingredient.name
+    = item.amount
+    = item.measure
 
 = link_to 'Edit', edit_recipe_path(@recipe)
 \|
