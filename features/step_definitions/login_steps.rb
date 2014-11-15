@@ -2,17 +2,13 @@ Given(/^I am a visitor$/) do
 
 end
 
-When(/^I visit main site$/) do
-  visit root_path
-end
+
 
 Then(/^I should see a sign up button$/) do
   expect(page).to have_content 'Sign up'
 end
 
-When(/^I click "(.*?)"$/) do |arg1|
-  click_on arg1
-end
+
 
 Then(/^I should see a sign up form$/) do
   expect(page).to have_content 'Password'
@@ -26,14 +22,9 @@ When(/^I fill in the sign up form$/) do
   fill_in "Password confirmation", :with => 'useruser'
 end
 
-When(/^I click "(.*?)" button$/) do |arg1|
-  click_button 'Sign up'
-end
 
-Then(/^I get redirected to main site$/) do
-  expect(current_path).to eq '/'
-end
 
 Then(/^I see that I am logged in$/) do
   expect(page).to have_content @email
 end
+
