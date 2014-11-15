@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Recipe:
+  = @item.recipe
+%p
+  %b Ingredient:
+  = @item.ingredient.name
+%p
+  %b User:
+  = @item.user.email
+%p
+  %b Amount:
+  = @item.amount
+%p
+  %b Measure:
+  = @item.measure
+
+= link_to 'Edit', edit_item_path(@item)
+\|
+= link_to 'Back', items_path

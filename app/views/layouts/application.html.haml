@@ -11,5 +11,10 @@
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
-      = render 'layouts/messages'
-      = yield
+      .container
+        .row
+          .col-sm-8
+            = render 'layouts/messages'
+            = yield
+          .col-sm-4
+            = render 'layouts/sidebar'

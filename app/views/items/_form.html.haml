@@ -1,0 +1,19 @@
+= form_for @item do |f|
+  - if @item.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@item.errors.count, "error")} prohibited this item from being saved:"
+      %ul
+        - @item.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :amount
+    = f.number_field :amount, :step => 0.1
+  .field
+    = f.label :measure
+    = f.select :measure, options_for_select(%w[piece gr kg ml l ])
+  .actions
+    = f.submit 'Save'

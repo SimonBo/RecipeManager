@@ -5,12 +5,13 @@
 # files.
 
 require 'cucumber/rails'
-
+require 'capybara-screenshot/cucumber'
+require 'capybara/webkit'
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
 # Capybara.default_selector = :xpath
-
+Capybara.javascript_driver
 # By default, any exception happening in your Rails application will bubble up
 # to Cucumber so that your scenario will fail. This is a different from how
 # your application behaves in the production environment, where an error page will

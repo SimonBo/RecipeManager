@@ -1,0 +1,11 @@
+- if user_signed_in?  
+  %h3
+    Your pantry:
+  %ul
+    - current_user.items.find_each do |i|
+      %li.user_item
+        = link_to i.ingredient.name, ingredient_path(i.id)
+        = i.amount
+        = i.measure
+        = link_to 'Remove item', i, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  = button_to 'Add item', new_item_path, method: :get
