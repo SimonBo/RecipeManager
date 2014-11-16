@@ -67,11 +67,7 @@ Given(/^there are a few recipes in db$/) do
   recipe2.items << FactoryGirl.create(:item, ingredient: ing3, amount: 10, measure: 'gr')
 
 
-  result = 0
 
-
-
-  expect(result).to eq 1
 
   
 end
