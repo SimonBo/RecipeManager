@@ -1,0 +1,12 @@
+As a user
+I can signup/login
+I can add/view/delete ingredients I have in my pantry
+I can view/add/delete recipes
+I can see recipes that I can use with the ingredients I currently have in stock
+I can review recipes
+If I select a recipe, the ingredients necessary for it will be removed from my pantry   
+  --> create Meal? -> user_id, recipe_id
+  --> 
+I can recommend a recipe on the site/fb/tw/email
+I can choose what type of cuisine im interested in
+

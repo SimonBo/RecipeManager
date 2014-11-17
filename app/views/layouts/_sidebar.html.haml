@@ -2,7 +2,8 @@
   %h3 
     You should try:
   #recommendations
-
+    - current_user.recommendations.each do |rec|
+      = rec.recipe.name
   %h3
     Your pantry:
   %ul

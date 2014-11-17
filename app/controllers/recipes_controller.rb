@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   respond_to :html
+  after_action :generate_recommendations, only: [:create, :update]
 
   def index
     @recipes = Recipe.all
@@ -32,15 +33,20 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    respond_with(@recipe)
+    redirect_to root_path
   end
 
   private
-    def set_recipe
-      @recipe = Recipe.find(params[:id])
-    end
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
-    def recipe_params
-      params.require(:recipe).permit(:name, :description, :user_id, items_attributes: [:id, :amount, :measure, :ingredient_id, :name, :_destroy])
-    end
+  def generate_recommendations
+    current_user.recommendations.delete_all
+    Recipe.find_recommendations(current_user)
+  end
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :description, :user_id, items_attributes: [:id, :amount, :measure, :ingredient_id, :name, :_destroy])
+  end
 end

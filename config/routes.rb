@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :recommendations
+
   resources :items
 
   resources :ingredients

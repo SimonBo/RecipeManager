@@ -13,7 +13,7 @@
     %tr
       %td= recipe.name
       %td= recipe.description
-      %td= recipe.user
+      %td= recipe.user.email if recipe.user
       %td= link_to 'Show', recipe
       %td= link_to 'Edit', edit_recipe_path(recipe)
       %td= link_to 'Destroy', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }

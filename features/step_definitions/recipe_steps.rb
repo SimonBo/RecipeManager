@@ -73,8 +73,9 @@ Given(/^there are a few recipes in db$/) do
 end
 
 Then(/^I see recommended dishes based on my pantry$/) do
+  Recipe.find_recommendations(@user)
   within("#recommendations") do
-    expect(page).to have_content @recipe
+    expect(page).to have_content @recipe.name
   end
 end
 
