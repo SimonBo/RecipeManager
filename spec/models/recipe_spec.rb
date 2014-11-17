@@ -37,6 +37,7 @@ RSpec.describe Recipe, :type => :model do
     @recipe2.items << create(:item, ingredient: ing2, amount: 200, measure: 'ml')
     @recipe2.items << create(:item, ingredient: ing3, amount: 10, measure: 'gr')
   end
+  
   it "returns true if recipe can be used with user's pantry" do
     expect(@recipe.compare_ingredients(@user)).to eq true
   end

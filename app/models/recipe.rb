@@ -18,18 +18,9 @@ class Recipe < ActiveRecord::Base
 
   def compare_ingredients(user)
     self.items.each do |item|
-      if !user.has_item?(item) or user.fetch_pantry_item_amount(item) < item.amount
-        return false
-      end
+      return false if !user.has_item?(item) or user.fetch_pantry_item_amount(item) < item.amount
     end
     return true
   end
-
-
-
-
-
-
-
 
 end

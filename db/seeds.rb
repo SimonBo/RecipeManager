@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+food = %w[egg  tomato olive_oil chicken potato cucumber strawberry milk sugar]
+food.each do |food|
+  ingredient
+end
